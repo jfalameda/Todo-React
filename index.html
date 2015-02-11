@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>React todo list with Inmutable.js</title>
+        <script src='bower_components/immutable/dist/immutable.js'></script>
+        <script src='bower_components/react/react-with-addons.js' ></script>
+        <script type='text/jsx' src='views/Todo.React.jsx'></script>
+        <script src='bower_components/react/JSXTransformer.js'></script>
+    </head>
+    <body>
+        <div id='yield'></div>
+        <script type='text/jsx'>
+            var TodoListData = Immutable.List.of(
+                Immutable.Map({
+                    Name: 'Meatballs'
+                }),
+                Immutable.Map({
+                    Name: 'Chocolat'
+                })
+            );
+            React.render(
+                <Todo initialItems={TodoListData}/>,
+                document.getElementById('yield')
+            );
+        </script>
+    </body>
+</html>
